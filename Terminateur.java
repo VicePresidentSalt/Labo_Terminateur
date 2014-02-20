@@ -13,22 +13,22 @@ public class Terminateur extends Thread
 				reader = new BufferedReader(
 						    new InputStreamReader( System.in ) );
 				ligne = reader.readLine();
-	
-				if(ligne =="Q" ||ligne ==" Q"||ligne =="Q "||ligne =="q"||ligne ==" q"||ligne =="q ")
+
+            if(ligne.equals("Q") ||ligne.equals(" Q")||ligne.equals("Q ")||ligne.equals("q")||ligne .equals(" q")||ligne.equals("q "))
 				{
 					currentThread().interrupt();
 					reader.close();
 				}
-			
+
 			}
-		
+
 		}
 		catch(IOException ioe)
 		{
 			System.err.println(ioe);
 			System.exit(1);
 		}
-		
-		
-	} 
+
+
+	}
 }
