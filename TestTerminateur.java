@@ -1,9 +1,12 @@
-public class TestTerminateur extends Terminateur {
+public class TestTerminateur{
+
+   Thread t;
 
    public TestTerminateur()
    {
    		Terminateur test = new Terminateur(); // ermm aller chercher le thread de lautre fichier ?? a revoir
-   		test.start();
+         t =  new Thread(test);
+   		t.start();
    }
 
     public static void main(String args[])
@@ -14,12 +17,12 @@ public class TestTerminateur extends Terminateur {
 
     public void EcrirePoint()
     {
-    	while(true)
+    	while(t.isAlive())
     	{
     		try
     		{
     		   System.out.print(".");
-    		   currentThread().sleep(500);
+    		   Thread.sleep(500);
     		}
     		catch(InterruptedException e)
     		{

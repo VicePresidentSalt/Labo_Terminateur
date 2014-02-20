@@ -1,14 +1,15 @@
 import java.io.*;
-public class Terminateur extends Thread
+public class Terminateur implements Runnable
 {
 	public void run() // Compile . À tester
 	{
 		BufferedReader reader;
 		String ligne = null;
 		System.out.print("Terminateur pret :");
+		boolean boucle = true;
 		try
 		{
-			while(currentThread().isAlive())
+			while(boucle)
 			{
 				reader = new BufferedReader(
 						    new InputStreamReader( System.in ) );
@@ -16,8 +17,7 @@ public class Terminateur extends Thread
 
             if(ligne.equals("Q") ||ligne.equals(" Q")||ligne.equals("Q ")||ligne.equals("q")||ligne .equals(" q")||ligne.equals("q "))
 				{
-					currentThread().interrupt();
-					reader.close();
+					boucle = false;
 				}
 
 			}
