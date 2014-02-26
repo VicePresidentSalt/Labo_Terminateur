@@ -15,7 +15,7 @@ public class Terminateur implements Runnable
 						    new InputStreamReader( System.in ) );
 				ligne = reader.readLine();
 
-            if(ligne.equals("Q") ||ligne.equals(" Q")||ligne.equals("Q ")||ligne.equals("q")||ligne .equals(" q")||ligne.equals("q "))
+            if(ligne.trim().equals("Q") ||ligne.trim().equals(" Q")||ligne.trim().equals("Q ")||ligne.trim().equals("q")||ligne.trim().equals(" q")||ligne.trim().equals("q "))
 				{
 					boucle = false;
 				}
