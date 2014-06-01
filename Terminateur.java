@@ -1,11 +1,10 @@
 import java.io.*;
 public class Terminateur implements Runnable
 {
-	public void run() // Compile . À tester
+	public void run()
 	{
 		BufferedReader reader;
 		String ligne = null;
-		System.out.print("Terminateur pret :");
 		boolean boucle = true;
 		try
 		{
@@ -28,7 +27,5 @@ public class Terminateur implements Runnable
 			System.err.println(ioe);
 			System.exit(1);
 		}
-
-
 	}
 }
